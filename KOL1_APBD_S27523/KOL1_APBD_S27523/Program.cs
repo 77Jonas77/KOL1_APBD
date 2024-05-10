@@ -1,4 +1,4 @@
-using przykl_kol1.Repositories;
+using KOL1_APBD_S27523.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +8,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<ITestRepository, TestRepository>();
+builder.Services.AddScoped<IBooksRepository, BooksRepository>();
 
 var app = builder.Build();
 
