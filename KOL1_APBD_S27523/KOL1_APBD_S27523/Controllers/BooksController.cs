@@ -30,7 +30,7 @@ public class BookController(IBooksRepository booksRepository) : ControllerBase
             var genreName = await _booksRepository.DoesGenreExist(genreId);
             if (genreName == null)
             {
-                return NotFound($"Genre doesnt exist with id{genreId}!");
+                return NotFound($"Genre with id{genreId} doesnt exist!");
             }
         }
 
@@ -44,6 +44,6 @@ public class BookController(IBooksRepository booksRepository) : ControllerBase
             return NotFound(e.Message);
         }
 
-        return StatusCode(201, response);
+        return StatusCode(StatusCodes.Status201Created, response);
     }
 }
